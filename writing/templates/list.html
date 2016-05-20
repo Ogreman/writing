@@ -6,7 +6,7 @@
 
 <ul>
 {% for item in object_list %}
-    <li>{{ item }}</li>
+    <li><a href="{% url 'text' item.pk %}">{{ item }}</a></li>
 {% endfor %}
 </ul>
 
