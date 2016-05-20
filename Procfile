@@ -1,1 +1,1 @@
-web: gunicorn ogrewriting.ogre.wsgi --log-file -
+web: gunicorn ogre.wsgi --log-file -
