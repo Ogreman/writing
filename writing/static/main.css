@@ -17,3 +17,8 @@
 h2 {
 	text-align: center;
 }
+
+li {
+	padding-bottom: 35px;
+	font-size: 1.2em;
+}
