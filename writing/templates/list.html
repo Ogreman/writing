@@ -3,13 +3,17 @@
 
 {% block content %}
   <div class="container">
-
-<ul>
-{% for item in object_list %}
-    <li><a href="{% url 'text' item.pk %}">{{ item }}</a></li>
-{% endfor %}
-</ul>
-
+		<div class="content">
+		{% if object_list %}
+		<ul>
+		{% for item in object_list %}
+		    <li><a href="{% url 'text' item.pk %}">{{ item }}</a></li>
+		{% endfor %}
+		</ul>
+		{% else %}
+		<h2>Nothing here.</h2>
+		{% endif %}
+		</div>
 </div>
 
 {% endblock %}
