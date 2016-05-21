@@ -1,6 +1,7 @@
 from django.db import models
 
 class Writing(models.Model):
+    
     content = models.TextField()
     title = models.CharField(max_length=255)
     active = models.BooleanField(default=False)
@@ -10,3 +11,14 @@ class Writing(models.Model):
 
     class Meta:
         ordering = ['id']
+
+
+class View(models.Model):
+
+    writing = models.ForeignKey('Writing')
+    created = models.DateTimeField('date created', auto_now_add=True)
+
+    def __str__(self):
+        return u'{} at {}'.format(
+            self.writing,
+            self.created)

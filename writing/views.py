@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from .models import Writing
+from .models import Writing, View
 
 
 class ActiveObjectMixin(object):
@@ -20,3 +20,9 @@ class WritingListView(ActiveObjectMixin, ListView):
 class WritingDetailView(ActiveObjectMixin, DetailView):
     model = Writing
     template_name = "text.html"
+
+    def get_object(self, queryset=None):
+        obj = super(WritingDetailView, self).get_object(queryset)
+        if not self.request.user.is_authenticated():
+            View.objects.create(writing=obj)
+        return obj
