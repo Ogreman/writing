@@ -23,12 +23,7 @@ li {
 	font-size: 1.2em;
 }
 
-input[type=text], input[type=email] {
-	width: 100%;
-	margin-bottom: 2%;
-}
-
-textarea {
+input[type=text], input[type=email], textarea {
 	width: 100%;
 	margin-bottom: 2%;
 }

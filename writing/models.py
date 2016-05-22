@@ -31,4 +31,6 @@ class Message(models.Model):
     email = models.EmailField(blank=True)
 
     def __str__(self):
-        return 'New message at {}'.format(self.created)
+        return '{} message at {}'.format(
+            'Contactable' if self.email else 'Anonymous',
+            self.created)

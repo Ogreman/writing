@@ -7,6 +7,11 @@ class WritingAdmin(admin.ModelAdmin):
     def num_views(self, instance):
         return instance.view_set.count()
 
+
+class MessageAdmin(admin.ModelAdmin):
+    readonly_fields = ('content', 'email',)
+
+
 admin.site.register(Writing, WritingAdmin)
 admin.site.register(View)
-admin.site.register(Message)
+admin.site.register(Message, MessageAdmin)
