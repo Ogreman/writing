@@ -22,3 +22,13 @@ class View(models.Model):
         return u'{} at {}'.format(
             self.writing,
             self.created)
+
+
+class Message(models.Model):
+
+    content = models.TextField('message')
+    created = models.DateTimeField('date created', auto_now_add=True)
+    email = models.EmailField(blank=True)
+
+    def __str__(self):
+        return 'New message at {}'.format(self.created)

@@ -2,11 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>OGRE</title>
+<title>WIZZARDING</title>
   <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
-  
 </head>
 <body>
 {% block content %}{% endblock %}
 </body>
+<footer>
+	<h3><a href="{% url 'contact' %}">Leave a message</a></h3>
+</footer>
 </html>
