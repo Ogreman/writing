@@ -9,6 +9,8 @@
 {% block content %}{% endblock %}
 </body>
 <footer>
-	<h3><a href="{% url 'contact' %}">Leave a message</a></h3>
+	<div id="home-link" class="symbol-link" onclick="location='{% url 'home' %}'">&#9968;</div>
+	<div id="contact-link" class="symbol-link" onclick="location='{% url 'contact' %}'">&#9993;</div>
+	<div id="light-link" class="symbol-link" onclick="window.open('{% url 'light' %}')">&#128247;</div>
 </footer>
 </html>

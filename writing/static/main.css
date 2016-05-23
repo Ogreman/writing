@@ -28,7 +28,21 @@ input[type=text], input[type=email], textarea {
 	margin-bottom: 2%;
 }
 
-footer {
-	text-align: right;
-	margin-right: 1%;
+#contact-link {
+	top: 52px;
+}
+
+#light-link {
+	top: 30px;
+}
+
+#home-link {
+	top: 8px;
+}
+
+.symbol-link {
+	position: fixed;
+	cursor: pointer;
+	background-color: white;
+	left: 8px;
 }
