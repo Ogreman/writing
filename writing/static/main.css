@@ -29,20 +29,34 @@ input[type=text], input[type=email], textarea {
 }
 
 #contact-link {
-	top: 52px;
+	top: 16%;
+	font-size: xx-large;
 }
 
 #light-link {
-	top: 30px;
+	top: 13%;
 }
 
 #home-link {
-	top: 8px;
+	top: 10%;
 }
 
-.symbol-link {
-	position: fixed;
-	cursor: pointer;
-	background-color: white;
-	left: 8px;
+@media (max-width: 991px) {
+  .symbol-link {
+  	visibility: hidden;
+  }
+}
+
+
+@media (min-width: 1024px) {
+	.symbol-link {
+		position: fixed;
+		cursor: pointer;
+		background-color: white;
+		left: 8px;
+		font-family: "courier";
+		font-size: x-large;
+		color: black;
+		width: 1.5%;
+	}
 }
