@@ -29,8 +29,7 @@ input[type=text], input[type=email], textarea {
 }
 
 #contact-link {
-	top: 16%;
-	font-size: xx-large;
+	top: 16.5%;
 }
 
 #light-link {
@@ -57,7 +56,7 @@ input[type=text], input[type=email], textarea {
 		font-family: "courier";
 		font-size: x-large;
 		color: black;
-		min-width: 1.7%;
+		min-width: 2.5%;
 		min-height: 1%;
 	}
 }
