@@ -44,6 +44,11 @@ input[type=text], input[type=email], textarea {
   .symbol-link {
   	visibility: hidden;
   }
+  .alt-symbol-link {
+  	visibility: visible;
+  	text-align: center;
+  	cursor: pointer;
+  }
 }
 
 
