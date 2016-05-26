@@ -1,6 +1,8 @@
+from django.core.mail import send_mail, mail_admins
 from django.shortcuts import render
-from django.core.urlresolvers import reverse_lazy
+from django.core.urlresolvers import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView
+from django.conf import settings
 
 from .models import Writing, View, Message
 from .forms import MessageForm
@@ -35,3 +37,11 @@ class MessageCreateView(CreateView):
     form_class = MessageForm
     template_name = "contact.html"
     success_url = reverse_lazy('thanks')
+
+    def form_valid(self, form):
+        response = super(MessageCreateView, self).form_valid(form)
+        site_url = settings.SITE_URL
+        url = reverse('admin:writing_message_change', args=(self.object.id, ))
+        mail_admins('New message on Wizzarding', 'Check the admin page for details',
+            html_message=settings.NEW_MESSAGE_TEMPLATE.format(site_url, url), fail_silently=True)
+        return response

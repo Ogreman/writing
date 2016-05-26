@@ -17,7 +17,6 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -121,6 +120,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
+ADMINS = [
+    ('ogre', 'theogreman@gmail.com'),
+]
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -136,3 +139,8 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+NEW_MESSAGE_TEMPLATE = "<html><body><a href='{}{}'>See the message here</a></body></html>"
+
+EMAIL_SUBJECT_PREFIX = "[Wizzarding] "
+SERVER_EMAIL = "no-reply@wizzarding.com"
+DEFAULT_FROM_EMAIL = SERVER_EMAIL
