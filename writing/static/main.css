@@ -54,6 +54,8 @@ input[type=text], input[type=email], textarea {
   	visibility: visible;
   	text-align: center;
   	cursor: pointer;
+  	position: relative;
+  	bottom: 10px;
   }
 }
 
