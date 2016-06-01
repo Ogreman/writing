@@ -12,10 +12,16 @@
 	padding-bottom: 5%;
 	padding-top: 5%;
 	padding-right: 5%;
+	font-family: monospace;
+}
+
+.content h3 {
+	text-align: center;
 }
 
 h2 {
 	text-align: center;
+	font-family: monospace;
 }
 
 li {
