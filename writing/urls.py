@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^list/(?P<pk>\d+)/$', WritingDetailView.as_view(), name='text'),
     url(r'^contact/$', MessageCreateView.as_view(), name='contact'),
     url(r'^thanks/$', TemplateView.as_view(template_name='thanks.html'), name='thanks'),
+    url(r'^vikings/$', TemplateView.as_view(template_name='vikings.html'), name='vikings'),
     url(r'^light/$', RedirectView.as_view(url='https://www.instagram.com/wizzarding/'), name='light'),
 ]
