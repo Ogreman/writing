@@ -65,6 +65,9 @@ input[type=text], input[type=email], textarea {
   .send {
   	width: 50%;
   }
+  ul.writing-list li a {
+  	font-size: x-large;
+  }
 }
 
 

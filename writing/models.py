@@ -12,6 +12,9 @@ class Writing(models.Model):
     class Meta:
         ordering = ['id']
 
+    def word_count(self):
+        return len(self.content.split())
+
 
 class View(models.Model):
 
