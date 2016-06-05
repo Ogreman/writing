@@ -32,6 +32,11 @@ li {
 input[type=text], input[type=email], textarea {
 	width: 100%;
 	margin-bottom: 2%;
+	font-size: x-large;
+}
+
+.send {
+	font-size: x-large;
 }
 
 #contact-link {
@@ -56,6 +61,9 @@ input[type=text], input[type=email], textarea {
   	cursor: pointer;
   	position: relative;
   	bottom: 10px;
+  }
+  .send {
+  	width: 50%;
   }
 }
 
