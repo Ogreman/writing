@@ -8,7 +8,7 @@
 		{% if object_list %}
 		<ul class="writing-list">
 		{% for item in object_list %}
-		    <li><a href="{% url 'text' item.pk %}">{{ item }}</a> ({{ item.word_count }} words)</li>
+		    <li><a href="{{ item.get_absolute_url }}">{{ item }}</a> ({{ item.word_count }} words)</li>
 		{% endfor %}
 		</ul>
 		{% else %}

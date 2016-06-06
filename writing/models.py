@@ -1,4 +1,6 @@
+from django.core.urlresolvers import reverse
 from django.db import models
+
 
 class Writing(models.Model):
     
@@ -14,6 +16,9 @@ class Writing(models.Model):
 
     def word_count(self):
         return len(self.content.split())
+
+    def get_absolute_url(self):
+        return reverse('text', kwargs={'pk': self.pk})
 
 
 class View(models.Model):
