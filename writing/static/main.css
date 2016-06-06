@@ -15,6 +15,11 @@
 	font-family: monospace;
 }
 
+img.wizzarding {
+	width: 70%;
+	padding-left: 15%;
+}
+
 .content h3 {
 	text-align: center;
 }
