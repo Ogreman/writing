@@ -45,7 +45,7 @@ input[type=text], input[type=email], textarea {
 }
 
 #contact-link {
-	top: 16.5%;
+	top: 19%;
 }
 
 #light-link {
@@ -54,6 +54,10 @@ input[type=text], input[type=email], textarea {
 
 #home-link {
 	top: 10%;
+}
+
+#twitter-link {
+	top: 16%;
 }
 
 @media (max-width: 991px) {
