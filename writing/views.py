@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView
 from django.conf import settings
+from django.core import serializers
+from django.http import JsonResponse
 
 from .models import Writing, View, Message
 from .forms import MessageForm
@@ -30,6 +32,24 @@ class WritingDetailView(ActiveObjectMixin, DetailView):
         if not self.request.user.is_authenticated():
             View.objects.create(writing=obj)
         return obj
+
+
+class WritingDetailAPIView(ActiveObjectMixin, DetailView):
+    model = Writing
+
+    def get(self, request, *args, **kwargs):
+        obj = self.get_object()
+        data = serializers.serialize("json", [obj], fields=('title', 'content'))
+        return JsonResponse(data, status=200, safe=False)
+
+
+class WritingListAPIView(ActiveObjectMixin, ListView):
+    model = Writing
+
+    def get(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        data = serializers.serialize("json", queryset, fields=('title', 'content'))
+        return JsonResponse(data, status=200, safe=False)
 
 
 class MessageCreateView(CreateView):

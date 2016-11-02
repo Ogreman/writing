@@ -1,7 +1,9 @@
 from django.conf.urls import include, url
 from django.views.generic import TemplateView, RedirectView
 
-from .views import WritingListView, WritingDetailView, MessageCreateView
+from .views import (
+    WritingListView, WritingDetailView, MessageCreateView,
+    WritingDetailAPIView, WritingListAPIView)
 
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='home'),
@@ -13,4 +15,6 @@ urlpatterns = [
     url(r'^light/$', RedirectView.as_view(url='https://www.instagram.com/wizzarding/'), name='light'),
     url(r'^twitter/$', RedirectView.as_view(url='https://www.twitter.com/a_WIZZARD/'), name='twitter'),
 
+    url(r'^api/list/$', WritingListAPIView.as_view(), name='api_list'),
+    url(r'^api/list/(?P<pk>\d+)/$', WritingDetailAPIView.as_view(), name='api_detail'),
 ]
